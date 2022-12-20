@@ -1,0 +1,161 @@
+.site-content{
+  background: rgba(255, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0);
+    display: flex;
+    align-items: center;
+  }
+
+.album-show{
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  padding: 30px;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: auto;
+  display: flex;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.song-show{
+  height: 600px;
+  width: 600px;
+  margin: auto;
+  margin-left: 10px;
+}
+
+.bar-album-title{
+  width: inherit;
+  height: 55px;
+  background-color: rgba(0,0,0,1);
+  position: relative;
+  text-align: center;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.album-title{
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgba(255, 255, 255, 1);
+  mix-blend-mode: difference;
+}
+.songs-scroll-content{
+  overflow-x: auto;
+  scroll-snap-type: y mandatory;
+  height: 545px;
+  background-color: rgba(0,0,0,0)
+}
+
+.songs-scroll-content::-webkit-scrollbar{
+    width: 15px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.songs-scroll-content::-webkit-scrollbar-thumb{
+    background: linear-gradient(180deg, rgba(20,20,20,0.8), rgba(0,0,0,1));
+}
+.songs-scroll-content::-webkit-scrollbar-thumb:hover{
+    background: linear-gradient(180deg, rgba(90,90,90,0.8), rgba(0,0,0,1));
+}
+.songs-scroll-content::-webkit-scrollbar-thumb:active{
+    background: linear-gradient(180deg, rgba(120,120,120,0.8), rgba(20,20,20,1));
+}
+
+.song-list{
+  margin: 10px;
+  padding: 10px;
+  list-style-type: none;
+}
+
+.song{
+  overflow-x: hidden;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  font-weight: bold;
+  background-color: rgba(0,0,0,0.9);
+  color: rgba(255, 255, 255, 1);
+  padding: 20px;
+}
+
+.song:hover{
+  background-color: rgba(30,30,30,0.9);
+}
+
+
+.news-stroke{
+  background: rgba(0,0,0,0);
+  height: auto;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  overflow-x: scroll;
+}
+
+/* Скрываем scrollbar для Chrome, Safari и Opera */
+/*.news-stroke::-webkit-scrollbar {
+  display: none;
+}*/
+
+/* Скрываем scrollbar для IE, Edge и Firefox */
+/*.news-stroke {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}*/
+
+.news-stroke::-webkit-scrollbar{
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.news-stroke::-webkit-scrollbar-thumb{
+    background: linear-gradient(180deg, rgba(20,20,20,0.8), rgba(0,0,0,1));
+}
+.news-stroke::-webkit-scrollbar-thumb:hover{
+    background: linear-gradient(180deg, rgba(50,50,50,0.8), rgba(0,0,0,1));
+}
+.news-stroke::-webkit-scrollbar-thumb:active{
+    background: linear-gradient(180deg, rgba(90,90,90,0.8), rgba(0,0,0,1));
+}
+
+
+.album{
+  background: rgba(0,0,0,0);
+  display: relative;
+  align-items: center;
+  margin: 60px;
+  margin-bottom: 150px;
+}
+
+.album-button{
+  padding: 0;
+  border: 0;
+  background: rgba(0,0,0,0.5)
+}
+
+.cover{
+  position: relative;
+  z-index: 1;
+}
+
+.cover:hover{
+  transition: 0.4s;
+  opacity: 0.3;
+  cursor: pointer;
+
+}
+
+.album-text{
+  margin: 0;
+  padding: 0;
+  position: relative;
+  bottom: 280px;
+  color: rgb(255, 255, 255);
+  font-family: Verdana;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+  mix-blend-mode: lighten;
+  z-index: 0;
+}

@@ -1,0 +1,44 @@
+.playlist-table{
+  background: rgba(0,0,0,0.6);
+  width: 100%;
+  height: 100%;
+  padding-left: 500px;
+  margin-right: auto;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  vertical-align: middle;
+  overflow-x: hidden;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+}
+
+.search{
+  background: rgba(0,0,0,0);
+  height: auto;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  overflow-x: hidden;
+}
+
+.search input{
+  padding: 10px;
+  width: 300px;
+
+}
+
+.search button{
+  padding: 10px;
+  border-color: white;
+  background: rgba(0,0,0,0.6);
+  color: white;
+}
+.search button:hover{
+  background: rgba(100,100,100,100.6);
+  color: white;
+  cursor: pointer;
+}
