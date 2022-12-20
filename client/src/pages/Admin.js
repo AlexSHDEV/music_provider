@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import CreateBand from "../components/modals/CreateBand";
 import CreateAlbum from "../components/modals/CreateAlbum";
 import CreateSong from "../components/modals/CreateSong";
+import DeleteBand from "../components/modals/DeleteBand";
 import {observer} from "mobx-react-lite";
 
 const Admin = observer(() => {
@@ -14,6 +15,7 @@ const Admin = observer(() => {
       <CreateBand/>
       <CreateAlbum/>
       <CreateSong/>
+      <DeleteBand/>
       </div>
     </div>
   );

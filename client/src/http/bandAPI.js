@@ -35,6 +35,12 @@ export const fetchBandByName = async (name) => {
     return data
 }
 
+export const deleteBand = async (id) => {
+    const {data} = await $authHost.delete('api/band/' + id)
+    return data
+}
+
+
 export const fetchAlbum = async (id) => {
     const {data} = await $host.get('api/album/' + id)
     return data
