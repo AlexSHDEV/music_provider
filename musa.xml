@@ -1,0 +1,112 @@
+<ISSPECS>
+  <DESCRIPTION>
+    <TITLE>Musa</TITLE>
+  </DESCRIPTION>
+  <DATA>
+    <ENTITY ent_id="user">
+      <PROPERTY>id</PROPERTY>
+      <PROPERTY>login</PROPERTY>
+      <PROPERTY>password</PROPERTY>
+      <PROPERTY>role</PROPERTY>
+      <PROPERTY>img</PROPERTY>
+    </ENTITY>
+    <ENTITY ent_id="playlist">
+      <PROPERTY>id</PROPERTY>
+      <PROPERTY>name</PROPERTY>
+      <PROPERTY>info</PROPERTY>
+      <PROPERTY>img</PROPERTY>
+      <PROPERTY>userId</PROPERTY>
+    </ENTITY>
+    <ENTITY ent_id="playlist_content">
+      <PROPERTY>id</PROPERTY>
+      <PROPERTY>playlistId</PROPERTY>
+      <PROPERTY>userId</PROPERTY>
+    </ENTITY>
+    <ENTITY ent_id="song">
+      <PROPERTY>id</PROPERTY>
+      <PROPERTY>name</PROPERTY>
+      <PROPERTY>year</PROPERTY>
+      <PROPERTY>aud</PROPERTY>
+      <PROPERTY>albumId</PROPERTY>
+      <PROPERTY>bandId</PROPERTY>
+      <PROPERTY>singerId</PROPERTY>
+    </ENTITY>
+    <ENTITY ent_id="band">
+      <PROPERTY>id</PROPERTY>
+      <PROPERTY>name</PROPERTY>
+      <PROPERTY>country</PROPERTY>
+      <PROPERTY>info</PROPERTY>
+      <PROPERTY>img</PROPERTY>
+    </ENTITY>
+    <ENTITY ent_id="album">
+      <PROPERTY>id</PROPERTY>
+      <PROPERTY>name</PROPERTY>
+      <PROPERTY>genre</PROPERTY>
+      <PROPERTY>year</PROPERTY>
+      <PROPERTY>img</PROPERTY>
+      <PROPERTY>bandId</PROPERTY>
+    </ENTITY>
+    <ENTITY ent_id="singer">
+      <PROPERTY>firstname</PROPERTY>
+      <PROPERTY>lastname</PROPERTY>
+      <PROPERTY>country</PROPERTY>
+      <PROPERTY>birthday</PROPERTY>
+      <PROPERTY>info</PROPERTY>
+    </ENTITY>
+    <ENTITY ent_id="singer_bands">
+      <PROPERTY>in</PROPERTY>
+      <PROPERTY>out</PROPERTY>
+      <PROPERTY>singerId</PROPERTY>
+      <PROPERTY>bandId</PROPERTY>
+    </ENTITY>
+
+    <RELATIONSHIPS ent_ids = "user playlist">
+      <PROPERTY>ONE TO MANY</PROPERTY>
+    </RELATIONSHIPS>
+    <RELATIONSHIPS ent_ids = "band song">
+      <PROPERTY>ONE TO MANY</PROPERTY>
+    </RELATIONSHIPS>
+    <RELATIONSHIPS ent_ids = "album song">
+      <PROPERTY>ONE TO MANY</PROPERTY>
+    </RELATIONSHIPS>
+    <RELATIONSHIPS ent_ids = "singer song">
+      <PROPERTY>ONE TO MANY</PROPERTY>
+    </RELATIONSHIPS>
+    <RELATIONSHIPS ent_ids = "band album">
+      <PROPERTY>ONE TO MANY</PROPERTY>
+    </RELATIONSHIPS>
+    <RELATIONSHIPS ent_ids = "band singer">
+      <PROPERTY>MANY TO MANY</PROPERTY>
+    </RELATIONSHIPS>
+    <CONSTRAINT> Ограничение NOT NULL повсеместно</CONSTRAINT>
+  </DATA>
+  <ROLES>
+    <ROLE>
+      <TITLE>USER</TITLE>
+      <RESPOSIBILITY>Получение данных</RESPOSIBILITY>
+      <RESPOSIBILITY>Редактирование Плейлистов</RESPOSIBILITY>
+      <TOTALUSERS>1000</TOTALUSERS>
+    </ROLE>
+    <ROLE>
+      <TITLE>ADMIN</TITLE>
+      <RESPOSIBILITY>Получение данных</RESPOSIBILITY>
+      <RESPOSIBILITY>Редактирование Плейлистов</RESPOSIBILITY>
+      <RESPOSIBILITY>Добавление песен</RESPOSIBILITY>
+      <RESPOSIBILITY>Добавление альбомов</RESPOSIBILITY>
+      <RESPOSIBILITY>Добавление исполнителей</RESPOSIBILITY>
+      <TOTALUSERS>1</TOTALUSERS>
+    </ROLE>
+  </ROLES>
+  <TECHSPEC>
+    <TYPE>Web-development</TYPE>
+    <DEVTOOLS>
+      <DEV>React</DEV>
+      <DEV>Node.js)</DEV>
+    </DEVTOOLS>
+    <DBMS>
+      <TITLE>PostgreSQL</TITLE>
+      <VERSION>15</VERSION>
+      <REASONING>Наличие документации и материалов в открытом доступе.</REASONING>
+    </DBMS>
+  </TECHSPEC>
+</ISSPECS>
