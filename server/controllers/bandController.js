@@ -22,16 +22,24 @@ class BandController{
   //  return res.json(bands);
   //}
 
-  async getOne(req, res){
-    const {id} = req.params
-    const band = await Band.findOne({where: {id}})
-    return res.json(band);
+  async getOne(req, res, next){
+      try {
+      const {id} = req.params
+      const band = await Band.findOne({where: {id}})
+      return res.json(band);
+    } catch (e) {
+        next(ApiError.badRequest(e.message))
+    }
   }
 
-  async getId(req, res){
-    const {name} = req.params
-    const band = await Band.findOne({where: {name: name}})
-    return res.json(band);
+  async getId(req, res, next){
+      try {
+      const {name} = req.params
+      const band = await Band.findOne({where: {name: name}})
+      return res.json(band);
+    } catch (e) {
+        next(ApiError.badRequest(e.message))
+    }
   }
 
 }

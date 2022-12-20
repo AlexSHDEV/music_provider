@@ -18,17 +18,25 @@ class SongController{
     }
   }
 
-  async getAll(req, res){
+  async getAll(req, res, next){
+    try {
     const {id} = req.params;
     const songs = await Song.findAll({where: {albumId: id}, order: [
             ['year', 'DESC']]});
     return res.json(songs);
+  } catch (e) {
+      next(ApiError.badRequest(e.message));
+  }
   }
 
-  async getPlaylist(req, res){
+  async getPlaylist(req, res, next){
+    try {
     const {id} = req.params;
     const songs = await PlContent.findAll({where: {playlistId: id}});
     return res.json(songs);
+  } catch (e) {
+      next(ApiError.badRequest(e.message));
+  }
   }
 
   async pull(req, res, next){

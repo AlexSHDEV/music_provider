@@ -17,27 +17,39 @@ class AlbumController{
     }
   }
 
-  async getAll(req, res){
+  async getAll(req, res, next){
+    try {
     const {id} = req.params;
     const albums = await Album.findAll({where: {bandId: id}, order: [
             ['year', 'DESC']]});
     return res.json(albums);
+    } catch (e) {
+        next(ApiError.badRequest(e.message));
+    }
   }
 
-  async getOne(req, res){
-    const {id} = req.params
-    const album = await Album.findOne(
-        {
-            where: {id}
-        },
-    )
-    return res.json(album);
+  async getOne(req, res, next){
+      try {
+      const {id} = req.params
+      const album = await Album.findOne(
+          {
+              where: {id}
+          },
+      )
+      return res.json(album);
+    } catch (e) {
+        next(ApiError.badRequest(e.message));
+    }
   }
 
-  async getId(req, res){
-    const {name} = req.params
-    const album = await Album.findOne({where: {name: name}})
-    return res.json(album);
+  async getId(req, res, next){
+      try {
+      const {name} = req.params
+      const album = await Album.findOne({where: {name: name}})
+      return res.json(album);
+    } catch (e) {
+        next(ApiError.badRequest(e.message));
+    }
   }
 
 }
