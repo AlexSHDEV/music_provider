@@ -42,6 +42,16 @@ class BandController{
     }
   }
 
+  async delete(req, res, next){
+      try {
+      const {id} = req.params
+      const band = await Band.destroy({where: {id}})
+      return res.json(band);
+    } catch (e) {
+        next(ApiError.badRequest(e.message))
+    }
+  }
+
 }
 
 module.exports = new BandController();

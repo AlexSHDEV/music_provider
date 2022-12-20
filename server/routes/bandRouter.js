@@ -7,5 +7,6 @@ router.post('/', checkRole('ADMIN'), bandController.create);
 //router.get('/', bandController.getAll);
 router.get('/:id', bandController.getOne);
 router.get('/name/:name', bandController.getId);
+router.delete('/:id', bandController.delete);
 
 module.exports = router;
