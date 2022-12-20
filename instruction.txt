@@ -31,5 +31,7 @@
     "semantic-ui-css": "^2.5.0",
     "semantic-ui-react": "^2.1.4",
     "web-vitals": "^2.1.4"
-    3) Запустить клиент командой "npm start"
-    4) Запустить сервер командой "nodemon index.js"
+3) Создать базу данных PostgreSQL
+4) Инициализировать файлы .env в client и server 
+5) Запустить клиент командой "npm start"
+6) Запустить сервер командой "nodemon index.js"
